@@ -300,7 +300,7 @@ x_test = load_test_speakers.astype('float32')/255
 y_train =  np_utils.to_categorical(load_train_labels,num_class) #Converts a class vector (integers) to binary class matrix
 y_test =  np_utils.to_categorical(load_test_labels,num_class)
 
-### tạo model cho việc training data
+### create model for training data
 
 model = Sequential()
 model.add(Conv2D(8, (3, 3),  padding='same',
@@ -339,7 +339,7 @@ model.summary()  # prints a summary representation of your model
 model.compile(loss='categorical_crossentropy', optimizer= 'adam', 
                   metrics=['accuracy'])
 
-#  train mô hình và đánh giá 
+#  train and evaluate model 
 model.fit(x_train,y_train,batch_size= 24
           ,epochs= 100 ,verbose=1)
 
